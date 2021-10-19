@@ -1,4 +1,4 @@
-import 'package:eduniverse_medicina/src/home/container.dart';
+import 'package:eduniverse_medicina/src/class_funtions/function_tarjetas.dart';
 import 'package:flutter/material.dart';
 import 'package:url_launcher/url_launcher.dart';
 
@@ -20,8 +20,24 @@ class _HomeBooksState extends State<HomeBooks> {
       ),
       body: ListView(
         children: [
-          luciano(),
-          luciano()
+          tarjeta(
+              Image(image: AssetImage("assets/basico.jpg")),
+              ListTile(
+                title: Center(
+                    child: Text(
+                  "LIBROS DE CIENCIAS EXACTAS",
+                  style: TextStyle(color: Colors.white),
+                )),
+              )),
+          tarjeta(
+              Image(image: AssetImage("assets/basico2.jpg")),
+              ListTile(
+                title: Center(
+                    child: Text(
+                  "LIBROS DE MEDICINA",
+                  style: TextStyle(color: Colors.white),
+                )),
+              )),
         ],
       ),
       bottomNavigationBar: new BottomNavigationBar(
