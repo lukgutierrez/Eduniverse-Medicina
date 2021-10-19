@@ -1,15 +1,14 @@
 import 'package:eduniverse_medicina/src/class_funtions/function_tarjetas.dart';
-import 'package:eduniverse_medicina/src/home/subhome/home_cienciasbooks.dart';
-import 'package:eduniverse_medicina/src/home/subhome/home_medicinabooks.dart';
+import 'package:eduniverse_medicina/src/pages/libros_animations.dart';
 import 'package:flutter/material.dart';
 import 'package:url_launcher/url_launcher.dart';
 
-class HomeBooks extends StatefulWidget {
+class HomeCienciaBooks extends StatefulWidget {
   @override
-  _HomeBooksState createState() => _HomeBooksState();
+  _HomeCienciaBooksState createState() => _HomeCienciaBooksState();
 }
 
-class _HomeBooksState extends State<HomeBooks> {
+class _HomeCienciaBooksState extends State<HomeCienciaBooks> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -17,40 +16,56 @@ class _HomeBooksState extends State<HomeBooks> {
         centerTitle: false,
         leadingWidth: 0,
         title:
-            Text("LIBROS", style: TextStyle(fontSize: 40, color: Colors.white)),
+            Text("CIENCÍAS", style: TextStyle(fontSize: 40, color: Colors.white)),
         backgroundColor: Color(0xff6F0303),
       ),
       body: ListView(
         children: [
           tarjeta(
-            Image(image: AssetImage("assets/matematicas.jpg")),
+            Image(image: AssetImage("assets/basico.jpg")),
             ListTile(
               title: Center(
                   child: Text(
-                "LIBROS DE CIENCIAS EXACTAS",
+                "LIBROS DE MATEMATÍCAS",
                 style: TextStyle(color: Colors.white),
               )),
             ),
             () {
               Navigator.push(
                 context,
-                MaterialPageRoute(builder: (context) => HomeCienciaBooks()),
+                MaterialPageRoute(builder: (context) => AnimacionesLibros()),
               );
             },
           ),
           tarjeta(
-            Image(image: AssetImage("assets/basico2.jpg")),
+            Image(image: AssetImage("assets/fisica.jpg")),
             ListTile(
               title: Center(
                   child: Text(
-                "LIBROS DE MEDICINA",
+                "LIBROS DE FISÍCA",
                 style: TextStyle(color: Colors.white),
               )),
             ),
             () {
               Navigator.push(
                 context,
-                MaterialPageRoute(builder: (context) => HomeMedicinaBooks()),
+                MaterialPageRoute(builder: (context) => AnimacionesLibros()),
+              );
+            },
+          ),
+          tarjeta(
+            Image(image: AssetImage("assets/quimica.jpg")),
+            ListTile(
+              title: Center(
+                  child: Text(
+                "LIBROS DE QUIMÍCA",
+                style: TextStyle(color: Colors.white),
+              )),
+            ),
+            () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(builder: (context) => AnimacionesLibros()),
               );
             },
           ),

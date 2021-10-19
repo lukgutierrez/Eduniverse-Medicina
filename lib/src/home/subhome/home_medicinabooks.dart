@@ -1,29 +1,28 @@
 import 'package:eduniverse_medicina/src/class_funtions/function_tarjetas.dart';
-import 'package:eduniverse_medicina/src/home/subhome/home_cienciasbooks.dart';
-import 'package:eduniverse_medicina/src/home/subhome/home_medicinabooks.dart';
+import 'package:eduniverse_medicina/src/pages/libros_animations.dart';
 import 'package:flutter/material.dart';
 import 'package:url_launcher/url_launcher.dart';
 
-class HomeBooks extends StatefulWidget {
+class HomeMedicinaBooks extends StatefulWidget {
   @override
-  _HomeBooksState createState() => _HomeBooksState();
+  _HomeMedicinaBooksState createState() => _HomeMedicinaBooksState();
 }
 
-class _HomeBooksState extends State<HomeBooks> {
+class _HomeMedicinaBooksState extends State<HomeMedicinaBooks> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
         centerTitle: false,
         leadingWidth: 0,
-        title:
-            Text("LIBROS", style: TextStyle(fontSize: 40, color: Colors.white)),
+        title: Text("MEDICÍNA",
+            style: TextStyle(fontSize: 40, color: Colors.white)),
         backgroundColor: Color(0xff6F0303),
       ),
       body: ListView(
         children: [
           tarjeta(
-            Image(image: AssetImage("assets/matematicas.jpg")),
+            Image(image: AssetImage("assets/basico.jpg")),
             ListTile(
               title: Center(
                   child: Text(
@@ -34,7 +33,7 @@ class _HomeBooksState extends State<HomeBooks> {
             () {
               Navigator.push(
                 context,
-                MaterialPageRoute(builder: (context) => HomeCienciaBooks()),
+                MaterialPageRoute(builder: (context) => AnimacionesLibros()),
               );
             },
           ),
@@ -50,7 +49,7 @@ class _HomeBooksState extends State<HomeBooks> {
             () {
               Navigator.push(
                 context,
-                MaterialPageRoute(builder: (context) => HomeMedicinaBooks()),
+                MaterialPageRoute(builder: (context) => AnimacionesLibros()),
               );
             },
           ),
