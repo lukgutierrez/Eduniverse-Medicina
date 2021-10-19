@@ -1,4 +1,3 @@
-import 'package:eduniverse_medicina/src/pages/books.dart';
 import 'package:flutter/material.dart';
 import 'package:url_launcher/url_launcher.dart';
 
@@ -49,12 +48,10 @@ class PageViewWidget extends StatefulWidget {
 }
 
 class _PageViewWidgetState extends State<PageViewWidget> {
- 
   @override
   Widget build(BuildContext context) {
     return PageView(
       children: [
-        
         GestureDetector(
           onTap: () async {
             const url =
@@ -81,5 +78,3 @@ class _PageViewWidgetState extends State<PageViewWidget> {
     );
   }
 }
-
-
