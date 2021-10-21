@@ -1,4 +1,6 @@
 import 'package:eduniverse_medicina/src/class_funtions/function_tarjetas.dart';
+import 'package:eduniverse_medicina/src/home/home_investigaciones.dart';
+import 'package:eduniverse_medicina/src/home/home_youtube.dart';
 import 'package:eduniverse_medicina/src/home/subhome/home_cienciasbooks.dart';
 import 'package:eduniverse_medicina/src/home/subhome/home_medicinabooks.dart';
 import 'package:flutter/material.dart';
@@ -56,43 +58,55 @@ class _HomeBooksState extends State<HomeBooks> {
           ),
         ],
       ),
-      bottomNavigationBar: new BottomNavigationBar(
+     bottomNavigationBar: new BottomNavigationBar(
         showSelectedLabels: false,
         showUnselectedLabels: false,
         backgroundColor: Color(0xff6F0303),
         items: [
           BottomNavigationBarItem(
             icon: IconButton(
-                onPressed: () => launch(
-                    'https://www.facebook.com/Cerros-de-Terciopelo-334517869986612/?ref=page_internal'),
+                onPressed: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) => HomeInvestigaciones()),
+                  );
+                },
                 icon: ImageIcon(
                   AssetImage("assets/lupa.png"),
                   color: Colors.white,
                   size: 80,
                 )),
-            label: 'Facebook',
+            label: 'Investigaciones',
           ),
           BottomNavigationBarItem(
             icon: IconButton(
-                onPressed: () => launch(
-                    'https://api.whatsapp.com/send?phone=541160355956&app=facebook&entry_point=page_cta'),
+                onPressed: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) => HomeBooks()),
+                  );
+                },
                 icon: ImageIcon(
                   AssetImage("assets/book2.png"),
                   color: Colors.white,
                   size: 80,
                 )),
-            label: 'Whatsapp',
+            label: 'Books',
           ),
           BottomNavigationBarItem(
             icon: IconButton(
-                onPressed: () =>
-                    launch('https://www.instagram.com/cerrosdeterciopelo'),
+                onPressed: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) => HomeYoutube()),
+                  );
+                },
                 icon: ImageIcon(
                   AssetImage("assets/youtube.png"),
                   color: Colors.white,
                   size: 80,
                 )),
-            label: 'Instagram',
+            label: 'Youtube',
           ),
         ],
       ),

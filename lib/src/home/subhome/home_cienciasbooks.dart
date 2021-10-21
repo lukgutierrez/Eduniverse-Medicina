@@ -1,4 +1,7 @@
 import 'package:eduniverse_medicina/src/class_funtions/function_tarjetas.dart';
+import 'package:eduniverse_medicina/src/home/home_books.dart';
+import 'package:eduniverse_medicina/src/home/home_investigaciones.dart';
+import 'package:eduniverse_medicina/src/home/home_youtube.dart';
 import 'package:eduniverse_medicina/src/pages/libros_animations.dart';
 import 'package:flutter/material.dart';
 import 'package:url_launcher/url_launcher.dart';
@@ -15,8 +18,8 @@ class _HomeCienciaBooksState extends State<HomeCienciaBooks> {
       appBar: AppBar(
         centerTitle: false,
         leadingWidth: 0,
-        title:
-            Text("CIENCÍAS", style: TextStyle(fontSize: 40, color: Colors.white)),
+        title: Text("CIENCÍAS",
+            style: TextStyle(fontSize: 40, color: Colors.white)),
         backgroundColor: Color(0xff6F0303),
       ),
       body: ListView(
@@ -33,7 +36,7 @@ class _HomeCienciaBooksState extends State<HomeCienciaBooks> {
             () {
               Navigator.push(
                 context,
-                MaterialPageRoute(builder: (context) => AnimacionesLibros()),
+                MaterialPageRoute(builder: (context) => LibrosMatematica()),
               );
             },
           ),
@@ -49,7 +52,7 @@ class _HomeCienciaBooksState extends State<HomeCienciaBooks> {
             () {
               Navigator.push(
                 context,
-                MaterialPageRoute(builder: (context) => AnimacionesLibros()),
+                MaterialPageRoute(builder: (context) => LibrosFisica()),
               );
             },
           ),
@@ -65,7 +68,7 @@ class _HomeCienciaBooksState extends State<HomeCienciaBooks> {
             () {
               Navigator.push(
                 context,
-                MaterialPageRoute(builder: (context) => AnimacionesLibros()),
+                MaterialPageRoute(builder: (context) => LibrosQuimica()),
               );
             },
           ),
@@ -78,36 +81,49 @@ class _HomeCienciaBooksState extends State<HomeCienciaBooks> {
         items: [
           BottomNavigationBarItem(
             icon: IconButton(
-                onPressed: () => launch(
-                    'https://www.facebook.com/Cerros-de-Terciopelo-334517869986612/?ref=page_internal'),
+                onPressed: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                        builder: (context) => HomeInvestigaciones()),
+                  );
+                },
                 icon: ImageIcon(
                   AssetImage("assets/lupa.png"),
                   color: Colors.white,
                   size: 80,
                 )),
-            label: 'Facebook',
+            label: 'Investigaciones',
           ),
           BottomNavigationBarItem(
             icon: IconButton(
-                onPressed: () => launch(
-                    'https://api.whatsapp.com/send?phone=541160355956&app=facebook&entry_point=page_cta'),
+                onPressed: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) => HomeBooks()),
+                  );
+                },
                 icon: ImageIcon(
                   AssetImage("assets/book2.png"),
                   color: Colors.white,
                   size: 80,
                 )),
-            label: 'Whatsapp',
+            label: 'Books',
           ),
           BottomNavigationBarItem(
             icon: IconButton(
-                onPressed: () =>
-                    launch('https://www.instagram.com/cerrosdeterciopelo'),
+                onPressed: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) => HomeYoutube()),
+                  );
+                },
                 icon: ImageIcon(
                   AssetImage("assets/youtube.png"),
                   color: Colors.white,
                   size: 80,
                 )),
-            label: 'Instagram',
+            label: 'Youtube',
           ),
         ],
       ),

@@ -1,59 +1,20 @@
+import 'package:eduniverse_medicina/src/class_funtions/function_tarjetas.dart';
 import 'package:flutter/material.dart';
 import 'package:url_launcher/url_launcher.dart';
 
-class AnimacionesLibros extends StatefulWidget {
+class LibrosMatematica extends StatefulWidget {
   @override
-  _AnimacionesLibrosState createState() => _AnimacionesLibrosState();
+  _LibrosMatematicaState createState() => _LibrosMatematicaState();
 }
 
-class _AnimacionesLibrosState extends State<AnimacionesLibros> {
+class _LibrosMatematicaState extends State<LibrosMatematica> {
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      body: Stack(
-        children: [
-          Positioned.fill(
-              child: Image(
-            image: AssetImage("assets/fondo.png"),
-            fit: BoxFit.fill,
-          )),
-          Column(
-            mainAxisAlignment: MainAxisAlignment.start,
-            children: [
-              Padding(
-                padding: EdgeInsets.only(
-                  top: MediaQuery.of(context).padding.top + kToolbarHeight,
-                  left: 20,
-                ),
-                child: Text("Libros", style: TextStyle(fontSize: 39)),
-              ),
-              Expanded(
-                child: Padding(
-                  padding: const EdgeInsets.all(12.0),
-                  child: PageViewWidget(),
-                ),
-              ),
-              //Text("HOLA LUCIANO",style: TextStyle(fontSize: 50)),
-            ],
-          )
-        ],
-      ),
-    );
-  }
-}
-
-class PageViewWidget extends StatefulWidget {
-  @override
-  _PageViewWidgetState createState() => _PageViewWidgetState();
-}
-
-class _PageViewWidgetState extends State<PageViewWidget> {
-  @override
-  Widget build(BuildContext context) {
-    return PageView(
-      children: [
-        GestureDetector(
-          onTap: () async {
+    return clasesdelibros(
+        libros(
+          NetworkImage(
+              "https://res.cloudinary.com/lucianogutierrez/image/upload/v1634756675/BOOKS%20TEST/prueba_l60jdc.png"),
+          () async {
             const url =
                 "https://drive.google.com/file/d/1lB0hTuDuDUmWaJYS2TlQxtmwSkhWnfcI/view?usp=sharing";
             if (await canLaunch(url)) {
@@ -62,19 +23,92 @@ class _PageViewWidgetState extends State<PageViewWidget> {
               throw "Could not launch $url";
             }
           },
-          child: Container(
-            child: Image.asset("assets/libro1.png"),
-            width: 100,
-            height: 200,
-          ),
+          () async {
+            const url =
+                "https://drive.google.com/file/d/1lB0hTuDuDUmWaJYS2TlQxtmwSkhWnfcI/view?usp=sharing";
+            if (await canLaunch(url)) {
+              await launch(url);
+            } else {
+              throw "Could not launch $url";
+            }
+          },
+          NetworkImage(
+              "https://res.cloudinary.com/lucianogutierrez/image/upload/v1634756675/BOOKS%20TEST/prueba_l60jdc.png"),
         ),
-        Container(
-          child: Image(image: AssetImage("assets/libro2.png")),
+        Text("LIBROS DE MATEMATÍCAS"));
+  }
+}
+
+class LibrosFisica extends StatefulWidget {
+  @override
+  _LibrosFisicaState createState() => _LibrosFisicaState();
+}
+
+class _LibrosFisicaState extends State<LibrosFisica> {
+  @override
+  Widget build(BuildContext context) {
+    return clasesdelibros(
+        libros(
+          NetworkImage(
+              "https://res.cloudinary.com/lucianogutierrez/image/upload/v1634756675/BOOKS%20TEST/prueba_l60jdc.png"),
+          () async {
+            const url =
+                "https://drive.google.com/file/d/1lB0hTuDuDUmWaJYS2TlQxtmwSkhWnfcI/view?usp=sharing";
+            if (await canLaunch(url)) {
+              await launch(url);
+            } else {
+              throw "Could not launch $url";
+            }
+          },
+          () async {
+            const url =
+                "https://drive.google.com/file/d/1lB0hTuDuDUmWaJYS2TlQxtmwSkhWnfcI/view?usp=sharing";
+            if (await canLaunch(url)) {
+              await launch(url);
+            } else {
+              throw "Could not launch $url";
+            }
+          },
+          NetworkImage(
+              "https://res.cloudinary.com/lucianogutierrez/image/upload/v1634756675/BOOKS%20TEST/prueba_l60jdc.png"),
         ),
-        Container(
-          child: Image(image: AssetImage("assets/libro3.png")),
-        )
-      ],
-    );
+        Text("LIBROS DE FISÍCA"));
+  }
+}
+
+class LibrosQuimica extends StatefulWidget {
+  @override
+  _LibrosQuimicaState createState() => _LibrosQuimicaState();
+}
+
+class _LibrosQuimicaState extends State<LibrosQuimica> {
+  @override
+  Widget build(BuildContext context) {
+    return clasesdelibros(
+        libros(
+          NetworkImage(
+              "https://res.cloudinary.com/lucianogutierrez/image/upload/v1634756675/BOOKS%20TEST/prueba_l60jdc.png"),
+          () async {
+            const url =
+                "https://drive.google.com/file/d/1lB0hTuDuDUmWaJYS2TlQxtmwSkhWnfcI/view?usp=sharing";
+            if (await canLaunch(url)) {
+              await launch(url);
+            } else {
+              throw "Could not launch $url";
+            }
+          },
+          () async {
+            const url =
+                "https://drive.google.com/file/d/1lB0hTuDuDUmWaJYS2TlQxtmwSkhWnfcI/view?usp=sharing";
+            if (await canLaunch(url)) {
+              await launch(url);
+            } else {
+              throw "Could not launch $url";
+            }
+          },
+          NetworkImage(
+              "https://res.cloudinary.com/lucianogutierrez/image/upload/v1634756675/BOOKS%20TEST/prueba_l60jdc.png"),
+        ),
+        Text("LIBROS DE QUIMÍCA"));
   }
 }

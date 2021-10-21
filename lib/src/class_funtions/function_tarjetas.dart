@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:url_launcher/url_launcher.dart';
 
-tarjeta(imagen, texto,pagina) {
+tarjeta(imagen, texto, pagina) {
   return GestureDetector(
     onTap: pagina,
     child: Card(
@@ -23,4 +24,58 @@ tarjeta(imagen, texto,pagina) {
           ),
         )),
   );
+}
+
+libros(fotolibro, enlacelibro, enlacelibro2, fotolibro2) {
+  return PageView(
+    children: [
+      GestureDetector(
+        onTap: enlacelibro,
+        child: FadeInImage(
+          placeholder: AssetImage("assets/loading.gif"),
+          image: fotolibro,
+          width: 100,
+          height: 200,
+        ),
+      ),
+      GestureDetector(
+        onTap: enlacelibro2,
+        child: FadeInImage(
+          placeholder: AssetImage("assets/loading.gif"),
+          image: fotolibro2,
+          width: 100,
+          height: 200,
+        ),
+      ),
+    ],
+  );
+}
+
+clasesdelibros(listalibros,tituloclase){
+   return Scaffold(
+      appBar: AppBar(
+        backgroundColor: Color(0xff6F0303),
+        title: tituloclase,
+      ),
+      body: Stack(
+        children: [
+          Expanded(
+              child: Image(
+            image: AssetImage("assets/fondo.png"),
+            fit: BoxFit.fill,
+          )),
+          Column(
+            mainAxisAlignment: MainAxisAlignment.start,
+            children: [
+              Expanded(
+                child: Padding(
+                    padding: const EdgeInsets.all(12.0),
+                    child: listalibros,
+                    ),
+              ),
+            ],
+          )
+        ],
+      ),
+    );
 }

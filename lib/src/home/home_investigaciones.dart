@@ -1,25 +1,22 @@
-import 'package:eduniverse_medicina/src/class_funtions/function_tarjetas.dart';
 import 'package:eduniverse_medicina/src/home/home_books.dart';
-import 'package:eduniverse_medicina/src/home/home_investigaciones.dart';
 import 'package:eduniverse_medicina/src/home/home_youtube.dart';
-import 'package:eduniverse_medicina/src/pages/libros_animations.dart';
 import 'package:flutter/material.dart';
 import 'package:url_launcher/url_launcher.dart';
 
-class HomeMedicinaBooks extends StatefulWidget {
+class HomeInvestigaciones extends StatefulWidget {
   @override
-  _HomeMedicinaBooksState createState() => _HomeMedicinaBooksState();
+  _HomeInvestigacionesState createState() => _HomeInvestigacionesState();
 }
 
-class _HomeMedicinaBooksState extends State<HomeMedicinaBooks> {
+class _HomeInvestigacionesState extends State<HomeInvestigaciones> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
         centerTitle: false,
         leadingWidth: 0,
-        title: Text("MEDICÍNA",
-            style: TextStyle(fontSize: 40, color: Colors.white)),
+        title: Text("INVESTIGACIÓNES",
+            style: TextStyle(fontSize: 30, color: Colors.white)),
         backgroundColor: Color(0xff6F0303),
       ),
       body: Column(
