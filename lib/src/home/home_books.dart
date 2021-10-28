@@ -4,7 +4,6 @@ import 'package:eduniverse_medicina/src/home/home_youtube.dart';
 import 'package:eduniverse_medicina/src/home/subhome/home_cienciasbooks.dart';
 import 'package:eduniverse_medicina/src/home/subhome/home_medicinabooks.dart';
 import 'package:flutter/material.dart';
-import 'package:url_launcher/url_launcher.dart';
 
 class HomeBooks extends StatefulWidget {
   @override
@@ -12,12 +11,75 @@ class HomeBooks extends StatefulWidget {
 }
 
 class _HomeBooksState extends State<HomeBooks> {
+  int currentIndex = 1;
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      body: _patallaDistinta(currentIndex),
+      bottomNavigationBar: BottomNavigationBar(
+          backgroundColor: Color(0xff6F0303),
+          currentIndex: currentIndex,
+          onTap: (index) {
+            setState(() {
+              currentIndex = index;
+            });
+          },
+          items: [
+            BottomNavigationBarItem(
+                icon: ImageIcon(
+                  AssetImage("assets/lupa.png"),
+                  color: Colors.white,
+                  size: 40,
+                ),
+                label: "BUSCAR"),
+            BottomNavigationBarItem(
+                icon: ImageIcon(
+                  AssetImage("assets/book2.png"),
+                  color: Colors.white,
+                  size: 40,
+                ),
+                label: "BIBLOTECA"),
+            BottomNavigationBarItem(
+                backgroundColor: Colors.amber,
+                icon: ImageIcon(
+                  AssetImage("assets/youtube.png"),
+                  color: Colors.white,
+                  size: 40,
+                ),
+                label: "BIBLOTECA")
+          ]),
+    );
+  }
+}
+
+Widget _patallaDistinta(int paginaActual) {
+  switch (paginaActual) {
+    case 0:
+      return HomeInvestigaciones();
+    case 1:
+      return Libros();
+    case 2:
+      return HomeYoutube();
+
+    default:
+      return Libros();
+  }
+}
+
+class Libros extends StatefulWidget {
+  Libros({Key? key}) : super(key: key);
+
+  @override
+  _LibrosState createState() => _LibrosState();
+}
+
+class _LibrosState extends State<Libros> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
         centerTitle: false,
-        leadingWidth: 0,
+        leadingWidth: 1,
         title:
             Text("LIBROS", style: TextStyle(fontSize: 40, color: Colors.white)),
         backgroundColor: Color(0xff6F0303),
@@ -29,7 +91,7 @@ class _HomeBooksState extends State<HomeBooks> {
             ListTile(
               title: Center(
                   child: Text(
-                "LIBROS DE CIENCIAS EXACTAS",
+                "INGRESO A MEDICINA",
                 style: TextStyle(color: Colors.white),
               )),
             ),
@@ -45,7 +107,7 @@ class _HomeBooksState extends State<HomeBooks> {
             ListTile(
               title: Center(
                   child: Text(
-                "LIBROS DE MEDICINA",
+                "MEDICINA",
                 style: TextStyle(color: Colors.white),
               )),
             ),
@@ -55,58 +117,6 @@ class _HomeBooksState extends State<HomeBooks> {
                 MaterialPageRoute(builder: (context) => HomeMedicinaBooks()),
               );
             },
-          ),
-        ],
-      ),
-     bottomNavigationBar: new BottomNavigationBar(
-        showSelectedLabels: false,
-        showUnselectedLabels: false,
-        backgroundColor: Color(0xff6F0303),
-        items: [
-          BottomNavigationBarItem(
-            icon: IconButton(
-                onPressed: () {
-                  Navigator.push(
-                    context,
-                    MaterialPageRoute(builder: (context) => HomeInvestigaciones()),
-                  );
-                },
-                icon: ImageIcon(
-                  AssetImage("assets/lupa.png"),
-                  color: Colors.white,
-                  size: 80,
-                )),
-            label: 'Investigaciones',
-          ),
-          BottomNavigationBarItem(
-            icon: IconButton(
-                onPressed: () {
-                  Navigator.push(
-                    context,
-                    MaterialPageRoute(builder: (context) => HomeBooks()),
-                  );
-                },
-                icon: ImageIcon(
-                  AssetImage("assets/book2.png"),
-                  color: Colors.white,
-                  size: 80,
-                )),
-            label: 'Books',
-          ),
-          BottomNavigationBarItem(
-            icon: IconButton(
-                onPressed: () {
-                  Navigator.push(
-                    context,
-                    MaterialPageRoute(builder: (context) => HomeYoutube()),
-                  );
-                },
-                icon: ImageIcon(
-                  AssetImage("assets/youtube.png"),
-                  color: Colors.white,
-                  size: 80,
-                )),
-            label: 'Youtube',
           ),
         ],
       ),

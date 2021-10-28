@@ -50,7 +50,6 @@ libros(fotolibro, enlacelibro, enlacelibro2, fotolibro2) {
     ],
   );
 }
-
 clasesdelibros(listalibros,tituloclase){
    return Scaffold(
       appBar: AppBar(
@@ -59,11 +58,7 @@ clasesdelibros(listalibros,tituloclase){
       ),
       body: Stack(
         children: [
-          Expanded(
-              child: Image(
-            image: AssetImage("assets/fondo.png"),
-            fit: BoxFit.fill,
-          )),
+          
           Column(
             mainAxisAlignment: MainAxisAlignment.start,
             children: [

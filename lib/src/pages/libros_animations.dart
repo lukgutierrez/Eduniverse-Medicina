@@ -33,7 +33,7 @@ class _LibrosMatematicaState extends State<LibrosMatematica> {
             }
           },
           NetworkImage(
-              "https://res.cloudinary.com/lucianogutierrez/image/upload/v1634756675/BOOKS%20TEST/prueba_l60jdc.png"),
+              "https://res.cloudinary.com/lucianogutierrez/image/upload/v1634843810/BOOKS%20TEST/Ndovo_kfz135.png"),
         ),
         Text("LIBROS DE MATEMATÍCAS"));
   }
@@ -50,7 +50,7 @@ class _LibrosFisicaState extends State<LibrosFisica> {
     return clasesdelibros(
         libros(
           NetworkImage(
-              "https://res.cloudinary.com/lucianogutierrez/image/upload/v1634756675/BOOKS%20TEST/prueba_l60jdc.png"),
+              "https://res.cloudinary.com/lucianogutierrez/image/upload/v1634843815/BOOKS%20TEST/Ndov90ooio_k95neg.png"),
           () async {
             const url =
                 "https://drive.google.com/file/d/1lB0hTuDuDUmWaJYS2TlQxtmwSkhWnfcI/view?usp=sharing";
@@ -70,7 +70,7 @@ class _LibrosFisicaState extends State<LibrosFisica> {
             }
           },
           NetworkImage(
-              "https://res.cloudinary.com/lucianogutierrez/image/upload/v1634756675/BOOKS%20TEST/prueba_l60jdc.png"),
+              "https://res.cloudinary.com/lucianogutierrez/image/upload/v1635189231/BOOKS%20TEST/Ndov90ooio_r8x9sk.png"),
         ),
         Text("LIBROS DE FISÍCA"));
   }
@@ -85,30 +85,31 @@ class _LibrosQuimicaState extends State<LibrosQuimica> {
   @override
   Widget build(BuildContext context) {
     return clasesdelibros(
-        libros(
-          NetworkImage(
-              "https://res.cloudinary.com/lucianogutierrez/image/upload/v1634756675/BOOKS%20TEST/prueba_l60jdc.png"),
-          () async {
-            const url =
-                "https://drive.google.com/file/d/1lB0hTuDuDUmWaJYS2TlQxtmwSkhWnfcI/view?usp=sharing";
-            if (await canLaunch(url)) {
-              await launch(url);
-            } else {
-              throw "Could not launch $url";
-            }
-          },
-          () async {
-            const url =
-                "https://drive.google.com/file/d/1lB0hTuDuDUmWaJYS2TlQxtmwSkhWnfcI/view?usp=sharing";
-            if (await canLaunch(url)) {
-              await launch(url);
-            } else {
-              throw "Could not launch $url";
-            }
-          },
-          NetworkImage(
-              "https://res.cloudinary.com/lucianogutierrez/image/upload/v1634756675/BOOKS%20TEST/prueba_l60jdc.png"),
-        ),
-        Text("LIBROS DE QUIMÍCA"));
+      libros(
+        NetworkImage(
+            "https://res.cloudinary.com/lucianogutierrez/image/upload/v1634843809/BOOKS%20TEST/Novo_oricsl.png"),
+        () async {
+          const url =
+              "https://drive.google.com/file/d/1lB0hTuDuDUmWaJYS2TlQxtmwSkhWnfcI/view?usp=sharing";
+          if (await canLaunch(url)) {
+            await launch(url);
+          } else {
+            throw "Could not launch $url";
+          }
+        },
+        () async {
+          const url =
+              "https://drive.google.com/file/d/1lB0hTuDuDUmWaJYS2TlQxtmwSkhWnfcI/view?usp=sharing";
+          if (await canLaunch(url)) {
+            await launch(url);
+          } else {
+            throw "Could not launch $url";
+          }
+        },
+        NetworkImage(
+            "https://res.cloudinary.com/lucianogutierrez/image/upload/v1634843815/BOOKS%20TEST/Ndov90oo_rccvo4.png"),
+      ),
+      Text("LIBROS DE QUIMÍCA"),
+    );
   }
 }

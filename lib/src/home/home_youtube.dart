@@ -1,7 +1,4 @@
 import 'package:eduniverse_medicina/src/class_funtions/function_tarjetas.dart';
-import 'package:eduniverse_medicina/src/home/home_books.dart';
-import 'package:eduniverse_medicina/src/home/home_investigaciones.dart';
-import 'package:eduniverse_medicina/src/home/subhome/home_medicinabooks.dart';
 import 'package:flutter/material.dart';
 import 'package:url_launcher/url_launcher.dart';
 
@@ -17,14 +14,114 @@ class _HomeYoutubeState extends State<HomeYoutube> {
       appBar: AppBar(
         centerTitle: false,
         leadingWidth: 0,
-        title: Text("YOUTUBE",
-            style: TextStyle(fontSize: 40, color: Colors.white)),
+        title: Text("CANALES DE YOUTUBE",
+            style: TextStyle(fontSize: 25, color: Colors.white)),
         backgroundColor: Color(0xff6F0303),
       ),
       body: ListView(
         children: [
           tarjeta(
-              Image(image: AssetImage("assets/youtube1.png")),
+              FadeInImage(
+                  placeholder: AssetImage("assets/loading.gif"),
+                  image: NetworkImage(
+                      "https://res.cloudinary.com/lucianogutierrez/image/upload/v1635298765/BOOKS%20TEST/medicina_brocmv.jpg")),
+              ListTile(
+                title: Center(
+                    child: Text(
+                  "Dr.Veller",
+                  style: TextStyle(color: Colors.white),
+                )),
+                subtitle: Center(
+                    child: Text(
+                  "VER CANAL",
+                  style: TextStyle(color: Colors.white),
+                )),
+              ), () async {
+            const url = 'https://www.youtube.com/c/DrVeller/featured';
+            if (await canLaunch(url)) {
+              await launch(url);
+            } else {
+              throw 'Could not launch $url';
+            }
+          }),
+          tarjeta(
+              FadeInImage(
+                  placeholder: AssetImage("assets/loading.gif"),
+                  image: NetworkImage(
+                      "https://res.cloudinary.com/lucianogutierrez/image/upload/v1635300523/BOOKS%20TEST/medicinas_hwtnhq.jpg")),
+              ListTile(
+                title: Center(
+                    child: Text(
+                  "Medicina Clara",
+                  style: TextStyle(color: Colors.white),
+                )),
+                subtitle: Center(
+                    child: Text(
+                  "VER CANAL",
+                  style: TextStyle(color: Colors.white),
+                )),
+              ), () async {
+            const url = 'https://www.youtube.com/user/medicinaclara';
+            if (await canLaunch(url)) {
+              await launch(url);
+            } else {
+              throw 'Could not launch $url';
+            }
+          }),
+          tarjeta(
+              FadeInImage(
+                  placeholder: AssetImage("assets/loading.gif"),
+                  image: NetworkImage(
+                      "https://res.cloudinary.com/lucianogutierrez/image/upload/v1635300730/BOOKS%20TEST/medicinas_zwqn9q.jpg")),
+              ListTile(
+                title: Center(
+                    child: Text(
+                  "David Vargas",
+                  style: TextStyle(color: Colors.white),
+                )),
+                subtitle: Center(
+                    child: Text(
+                  "VER CANAL",
+                  style: TextStyle(color: Colors.white),
+                )),
+              ), () async {
+            const url =
+                'https://www.youtube.com/channel/UCAFYoiJjNLKjevu6mUC3_Ag';
+            if (await canLaunch(url)) {
+              await launch(url);
+            } else {
+              throw 'Could not launch $url';
+            }
+          }),
+          tarjeta(
+              FadeInImage(
+                  placeholder: AssetImage("assets/loading.gif"),
+                  image: NetworkImage(
+                      "https://res.cloudinary.com/lucianogutierrez/image/upload/v1635301275/BOOKS%20TEST/medicinasdsf_pbucsy.jpg")),
+              ListTile(
+                title: Center(
+                    child: Text(
+                  "Nucleus Health Videos",
+                  style: TextStyle(color: Colors.white),
+                )),
+                subtitle: Center(
+                    child: Text(
+                  "VER CANAL",
+                  style: TextStyle(color: Colors.white),
+                )),
+              ), () async {
+            const url = 'https://www.youtube.com/user/nucleushealthvideose';
+            if (await canLaunch(url)) {
+              await launch(url);
+            } else {
+              throw 'Could not launch $url';
+            }
+          }),
+          tarjeta(
+              FadeInImage(
+                  placeholder: AssetImage("assets/loading.gif"),
+                  image: NetworkImage(
+                      "https://res.cloudinary.com/lucianogutierrez/image/upload/v1635301987/BOOKS%20TEST/medicinasddsffsfsf_d8dc6f.jpg")),
               ListTile(
                 title: Center(
                     child: Text(
@@ -45,59 +142,6 @@ class _HomeYoutubeState extends State<HomeYoutube> {
               throw 'Could not launch $url';
             }
           }),
-        ],
-      ),
-      bottomNavigationBar: new BottomNavigationBar(
-        showSelectedLabels: false,
-        showUnselectedLabels: false,
-        backgroundColor: Color(0xff6F0303),
-        items: [
-          BottomNavigationBarItem(
-            icon: IconButton(
-                onPressed: () {
-                  Navigator.push(
-                    context,
-                    MaterialPageRoute(
-                        builder: (context) => HomeInvestigaciones()),
-                  );
-                },
-                icon: ImageIcon(
-                  AssetImage("assets/lupa.png"),
-                  color: Colors.white,
-                  size: 80,
-                )),
-            label: 'Investigaciones',
-          ),
-          BottomNavigationBarItem(
-            icon: IconButton(
-                onPressed: () {
-                  Navigator.push(
-                    context,
-                    MaterialPageRoute(builder: (context) => HomeBooks()),
-                  );
-                },
-                icon: ImageIcon(
-                  AssetImage("assets/book2.png"),
-                  color: Colors.white,
-                  size: 80,
-                )),
-            label: 'Books',
-          ),
-          BottomNavigationBarItem(
-            icon: IconButton(
-                onPressed: () {
-                  Navigator.push(
-                    context,
-                    MaterialPageRoute(builder: (context) => HomeYoutube()),
-                  );
-                },
-                icon: ImageIcon(
-                  AssetImage("assets/youtube.png"),
-                  color: Colors.white,
-                  size: 80,
-                )),
-            label: 'Youtube',
-          ),
         ],
       ),
     );

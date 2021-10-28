@@ -3,6 +3,7 @@ import 'package:eduniverse_medicina/src/home/home_books.dart';
 import 'package:eduniverse_medicina/src/home/home_investigaciones.dart';
 import 'package:eduniverse_medicina/src/home/home_youtube.dart';
 import 'package:eduniverse_medicina/src/pages/libros_animations.dart';
+import 'package:eduniverse_medicina/src/pages/libros_medicina.dart';
 import 'package:flutter/material.dart';
 import 'package:url_launcher/url_launcher.dart';
 
@@ -17,69 +18,60 @@ class _HomeMedicinaBooksState extends State<HomeMedicinaBooks> {
     return Scaffold(
       appBar: AppBar(
         centerTitle: false,
-        leadingWidth: 0,
+        leadingWidth: 25,
         title: Text("MEDICÍNA",
-            style: TextStyle(fontSize: 40, color: Colors.white)),
+            style: TextStyle(fontSize: 25, color: Colors.white)),
         backgroundColor: Color(0xff6F0303),
       ),
-      body: Column(
-        mainAxisAlignment: MainAxisAlignment.center,
+      body: ListView(
         children: [
-          Container(
-            child: Center(child: Text("Estamos Trabajando!")),
+          tarjeta(
+            Image(image: AssetImage("assets/anatomia.jpg")),
+            ListTile(
+              title: Center(
+                  child: Text(
+                "LIBROS DE ANATOMÍA",
+                style: TextStyle(color: Colors.white),
+              )),
+            ),
+            () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(builder: (context) => LibrosAnatomia()),
+              );
+            },
           ),
-        ],
-      ),
-      bottomNavigationBar: new BottomNavigationBar(
-        showSelectedLabels: false,
-        showUnselectedLabels: false,
-        backgroundColor: Color(0xff6F0303),
-        items: [
-          BottomNavigationBarItem(
-            icon: IconButton(
-                onPressed: () {
-                  Navigator.push(
-                    context,
-                    MaterialPageRoute(
-                        builder: (context) => HomeInvestigaciones()),
-                  );
-                },
-                icon: ImageIcon(
-                  AssetImage("assets/lupa.png"),
-                  color: Colors.white,
-                  size: 80,
-                )),
-            label: 'Investigaciones',
+          tarjeta(
+            Image(image: AssetImage("assets/biologia.jpg")),
+            ListTile(
+              title: Center(
+                  child: Text(
+                "LIBROS DE BIOLOGÍA",
+                style: TextStyle(color: Colors.white),
+              )),
+            ),
+            () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(builder: (context) => LibrosBiologia()),
+              );
+            },
           ),
-          BottomNavigationBarItem(
-            icon: IconButton(
-                onPressed: () {
-                  Navigator.push(
-                    context,
-                    MaterialPageRoute(builder: (context) => HomeBooks()),
-                  );
-                },
-                icon: ImageIcon(
-                  AssetImage("assets/book2.png"),
-                  color: Colors.white,
-                  size: 80,
-                )),
-            label: 'Books',
-          ),
-          BottomNavigationBarItem(
-            icon: IconButton(
-                onPressed: () {
-                  Navigator.push(
-                    context,
-                    MaterialPageRoute(builder: (context) => HomeYoutube()),
-                  );
-                },
-                icon: ImageIcon(
-                  AssetImage("assets/youtube.png"),
-                  color: Colors.white,
-                  size: 80,
-                )),
-            label: 'Youtube',
+          tarjeta(
+            Image(image: AssetImage("assets/bioquimica.jpg")),
+            ListTile(
+              title: Center(
+                  child: Text(
+                "LIBROS DE BIOQUIMÍCA",
+                style: TextStyle(color: Colors.white),
+              )),
+            ),
+            () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(builder: (context) => LibrosBioquimica()),
+              );
+            },
           ),
         ],
       ),
