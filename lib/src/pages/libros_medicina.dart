@@ -18,7 +18,7 @@ class _LibrosAnatomiaState extends State<LibrosAnatomia> {
               "https://res.cloudinary.com/lucianogutierrez/image/upload/v1635362453/BOOKS%20TEST/Ndov90ooio_mgbsxh.png"),
           () async {
             const url =
-                "https://drive.google.com/file/d/1lB0hTuDuDUmWaJYS2TlQxtmwSkhWnfcI/view?usp=sharing";
+                "https://drive.google.com/file/d/1NY71olSGroOhFdip8UJNImUMyBhtr-Ek/view";
             if (await canLaunch(url)) {
               await launch(url);
             } else {
@@ -27,7 +27,7 @@ class _LibrosAnatomiaState extends State<LibrosAnatomia> {
           },
           () async {
             const url =
-                "https://drive.google.com/file/d/1lB0hTuDuDUmWaJYS2TlQxtmwSkhWnfcI/view?usp=sharing";
+                "https://drive.google.com/file/d/1gHzgI60TSi0VMYjEVMYRhOZ36cuMu2ew/view";
             if (await canLaunch(url)) {
               await launch(url);
             } else {
@@ -57,7 +57,7 @@ class _LibrosBiologiaState extends State<LibrosBiologia> {
               "https://res.cloudinary.com/lucianogutierrez/image/upload/v1635431026/BOOKS%20TEST/image_2_lvzy78.png"),
           () async {
             const url =
-                "https://drive.google.com/file/d/1lB0hTuDuDUmWaJYS2TlQxtmwSkhWnfcI/view?usp=sharing";
+                "https://drive.google.com/file/d/1Nay4nP1Cp-8VyHUzMOO3Hz13vI5X1TJ8/view?usp=sharing";
             if (await canLaunch(url)) {
               await launch(url);
             } else {
@@ -66,7 +66,7 @@ class _LibrosBiologiaState extends State<LibrosBiologia> {
           },
           () async {
             const url =
-                "https://drive.google.com/file/d/1lB0hTuDuDUmWaJYS2TlQxtmwSkhWnfcI/view?usp=sharing";
+                "https://drive.google.com/file/d/1K_ehdEamBPop7Y17E188alBREubPE92a/view?usp=sharing";
             if (await canLaunch(url)) {
               await launch(url);
             } else {
@@ -96,7 +96,7 @@ class _LibrosBioquimicaState extends State<LibrosBioquimica> {
               "https://res.cloudinary.com/lucianogutierrez/image/upload/v1635431239/BOOKS%20TEST/image_3_njwei1.png"),
           () async {
             const url =
-                "https://drive.google.com/file/d/1lB0hTuDuDUmWaJYS2TlQxtmwSkhWnfcI/view?usp=sharing";
+                "https://drive.google.com/file/d/1KF7NvsQAUK5eUJt18wk5tinyvB1Ot8cM/view";
             if (await canLaunch(url)) {
               await launch(url);
             } else {
@@ -105,7 +105,7 @@ class _LibrosBioquimicaState extends State<LibrosBioquimica> {
           },
           () async {
             const url =
-                "https://drive.google.com/file/d/1lB0hTuDuDUmWaJYS2TlQxtmwSkhWnfcI/view?usp=sharing";
+                "https://drive.google.com/file/d/1M8fYMzvCKN23uncilrvzIuknf2a6ZoVQ/view";
             if (await canLaunch(url)) {
               await launch(url);
             } else {

@@ -13,7 +13,7 @@ class _HomeYoutubeState extends State<HomeYoutube> {
     return Scaffold(
       appBar: AppBar(
         centerTitle: false,
-        leadingWidth: 0,
+        leadingWidth: 25,
         title: Text("CANALES DE YOUTUBE",
             style: TextStyle(fontSize: 25, color: Colors.white)),
         backgroundColor: Color(0xff6F0303),
@@ -130,7 +130,7 @@ class _HomeYoutubeState extends State<HomeYoutube> {
                 )),
                 subtitle: Center(
                     child: Text(
-                  "558.000 suscriptores",
+                  "VER CANAL",
                   style: TextStyle(color: Colors.white),
                 )),
               ), () async {

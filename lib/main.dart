@@ -1,3 +1,4 @@
+import 'package:eduniverse_medicina/home_page.dart';
 import 'package:eduniverse_medicina/src/home/home_books.dart';
 import 'package:eduniverse_medicina/src/home/home_investigaciones.dart';
 import 'package:eduniverse_medicina/src/home/home_youtube.dart';
@@ -10,14 +11,15 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      theme: ThemeData(primaryColor: Color(0xff6F0303)),
       title: 'Libros de Medicina Gratis',
-      initialRoute: "HomeBooks",
+      initialRoute: "HomePage",
       routes: {
         "HomeBooks": (BuildContext context) => HomeBooks(),
+        "HomePage": (BuildContext context) => HomePage(),
         "HomeYoutube": (BuildContext context) => HomeYoutube(),
         "HomeInvestiga": (BuildContext context) => HomeInvestigaciones(),
       },
+      theme: ThemeData(primaryColor: Color(0xff6F0303),),
     );
   }
 }

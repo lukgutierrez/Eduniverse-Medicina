@@ -50,27 +50,36 @@ libros(fotolibro, enlacelibro, enlacelibro2, fotolibro2) {
     ],
   );
 }
-clasesdelibros(listalibros,tituloclase){
-   return Scaffold(
-      appBar: AppBar(
-        backgroundColor: Color(0xff6F0303),
-        title: tituloclase,
-      ),
-      body: Stack(
-        children: [
-          
-          Column(
-            mainAxisAlignment: MainAxisAlignment.start,
-            children: [
-              Expanded(
-                child: Padding(
-                    padding: const EdgeInsets.all(12.0),
-                    child: listalibros,
-                    ),
+
+clasesdelibros(listalibros, tituloclase) {
+  return Scaffold(
+    appBar: AppBar(
+      backgroundColor: Color(0xff6F0303),
+      title: tituloclase,
+    ),
+    body: Stack(
+      children: [
+        Container(
+          height: 250,
+          color: Color(0xff6F0303),
+          // decoration: BoxDecoration(
+          //     color: Color(0xff6F0303),
+          //     borderRadius: BorderRadius.only(
+          //         bottomLeft: Radius.circular(50),
+          //         bottomRight: Radius.circular(50))),
+        ),
+        Column(
+          mainAxisAlignment: MainAxisAlignment.start,
+          children: [
+            Expanded(
+              child: Padding(
+                padding: const EdgeInsets.all(12.0),
+                child: listalibros,
               ),
-            ],
-          )
-        ],
-      ),
-    );
+            ),
+          ],
+        )
+      ],
+    ),
+  );
 }

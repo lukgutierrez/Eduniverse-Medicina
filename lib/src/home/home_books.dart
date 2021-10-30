@@ -1,9 +1,9 @@
 import 'package:eduniverse_medicina/src/class_funtions/function_tarjetas.dart';
-import 'package:eduniverse_medicina/src/home/home_investigaciones.dart';
 import 'package:eduniverse_medicina/src/home/home_youtube.dart';
 import 'package:eduniverse_medicina/src/home/subhome/home_cienciasbooks.dart';
 import 'package:eduniverse_medicina/src/home/subhome/home_medicinabooks.dart';
 import 'package:flutter/material.dart';
+
 
 class HomeBooks extends StatefulWidget {
   @override
@@ -11,12 +11,13 @@ class HomeBooks extends StatefulWidget {
 }
 
 class _HomeBooksState extends State<HomeBooks> {
-  int currentIndex = 1;
+  int currentIndex = 0;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       body: _patallaDistinta(currentIndex),
       bottomNavigationBar: BottomNavigationBar(
+          selectedItemColor: Colors.white,
           backgroundColor: Color(0xff6F0303),
           currentIndex: currentIndex,
           onTap: (index) {
@@ -26,13 +27,7 @@ class _HomeBooksState extends State<HomeBooks> {
           },
           items: [
             BottomNavigationBarItem(
-                icon: ImageIcon(
-                  AssetImage("assets/lupa.png"),
-                  color: Colors.white,
-                  size: 40,
-                ),
-                label: "BUSCAR"),
-            BottomNavigationBarItem(
+                backgroundColor: Theme.of(context).primaryColor,
                 icon: ImageIcon(
                   AssetImage("assets/book2.png"),
                   color: Colors.white,
@@ -46,7 +41,7 @@ class _HomeBooksState extends State<HomeBooks> {
                   color: Colors.white,
                   size: 40,
                 ),
-                label: "BIBLOTECA")
+                label: "YOUTUBE")
           ]),
     );
   }
@@ -55,12 +50,9 @@ class _HomeBooksState extends State<HomeBooks> {
 Widget _patallaDistinta(int paginaActual) {
   switch (paginaActual) {
     case 0:
-      return HomeInvestigaciones();
-    case 1:
       return Libros();
-    case 2:
+    case 1:
       return HomeYoutube();
-
     default:
       return Libros();
   }
@@ -79,9 +71,9 @@ class _LibrosState extends State<Libros> {
     return Scaffold(
       appBar: AppBar(
         centerTitle: false,
-        leadingWidth: 1,
+        leadingWidth: 25,
         title:
-            Text("LIBROS", style: TextStyle(fontSize: 40, color: Colors.white)),
+            Text("LIBROS", style: TextStyle(fontSize: 30, color: Colors.white)),
         backgroundColor: Color(0xff6F0303),
       ),
       body: ListView(

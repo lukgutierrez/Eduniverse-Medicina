@@ -16,7 +16,7 @@ class _LibrosMatematicaState extends State<LibrosMatematica> {
               "https://res.cloudinary.com/lucianogutierrez/image/upload/v1634756675/BOOKS%20TEST/prueba_l60jdc.png"),
           () async {
             const url =
-                "https://drive.google.com/file/d/1lB0hTuDuDUmWaJYS2TlQxtmwSkhWnfcI/view?usp=sharing";
+                "https://drive.google.com/file/d/13u7WmPzZEHWzidxEGwgEn5eWUoj7JSSg/view";
             if (await canLaunch(url)) {
               await launch(url);
             } else {
@@ -25,7 +25,7 @@ class _LibrosMatematicaState extends State<LibrosMatematica> {
           },
           () async {
             const url =
-                "https://drive.google.com/file/d/1lB0hTuDuDUmWaJYS2TlQxtmwSkhWnfcI/view?usp=sharing";
+                "https://drive.google.com/file/d/167JnamQ3dMjxa3ooAs-8M7k3rZyi2TLX/view";
             if (await canLaunch(url)) {
               await launch(url);
             } else {
@@ -53,7 +53,7 @@ class _LibrosFisicaState extends State<LibrosFisica> {
               "https://res.cloudinary.com/lucianogutierrez/image/upload/v1634843815/BOOKS%20TEST/Ndov90ooio_k95neg.png"),
           () async {
             const url =
-                "https://drive.google.com/file/d/1lB0hTuDuDUmWaJYS2TlQxtmwSkhWnfcI/view?usp=sharing";
+                "https://drive.google.com/file/d/1taBCihDpFM98z7OaMSRVc13SaujEwGjm/view?usp=sharing";
             if (await canLaunch(url)) {
               await launch(url);
             } else {
@@ -62,7 +62,7 @@ class _LibrosFisicaState extends State<LibrosFisica> {
           },
           () async {
             const url =
-                "https://drive.google.com/file/d/1lB0hTuDuDUmWaJYS2TlQxtmwSkhWnfcI/view?usp=sharing";
+                "https://drive.google.com/file/d/17GngBoPRexn2gfwjjpi0-dkEJ5puZ5h9/view";
             if (await canLaunch(url)) {
               await launch(url);
             } else {
@@ -90,7 +90,7 @@ class _LibrosQuimicaState extends State<LibrosQuimica> {
             "https://res.cloudinary.com/lucianogutierrez/image/upload/v1634843809/BOOKS%20TEST/Novo_oricsl.png"),
         () async {
           const url =
-              "https://drive.google.com/file/d/1lB0hTuDuDUmWaJYS2TlQxtmwSkhWnfcI/view?usp=sharing";
+              "https://drive.google.com/file/d/16gNPzpAsUjERKyYwTFEVGZjmz9RTpNyG/view";
           if (await canLaunch(url)) {
             await launch(url);
           } else {
@@ -99,7 +99,7 @@ class _LibrosQuimicaState extends State<LibrosQuimica> {
         },
         () async {
           const url =
-              "https://drive.google.com/file/d/1lB0hTuDuDUmWaJYS2TlQxtmwSkhWnfcI/view?usp=sharing";
+              "https://drive.google.com/file/d/1FqqEH-QcC1FJW9gSPAArAnltrbgkGdRw/view?usp=sharing";
           if (await canLaunch(url)) {
             await launch(url);
           } else {
