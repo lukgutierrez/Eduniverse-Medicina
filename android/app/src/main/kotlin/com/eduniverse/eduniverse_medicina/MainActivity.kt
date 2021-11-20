@@ -1,4 +1,4 @@
-package com.example.eduniverse_medicina
+package com.eduniverse.medicina
 
 import io.flutter.embedding.android.FlutterActivity
 
