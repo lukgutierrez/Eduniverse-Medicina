@@ -14,8 +14,8 @@ class _LibrosAnatomiaState extends State<LibrosAnatomia> {
   Widget build(BuildContext context) {
     return clasesdelibros(
         libros(
-          NetworkImage(
-              "https://res.cloudinary.com/lucianogutierrez/image/upload/v1635362453/BOOKS%20TEST/Ndov90ooio_mgbsxh.png"),
+          AssetImage(
+              "assets/ana.png"),
           () async {
             const url =
                 "https://drive.google.com/file/d/1NY71olSGroOhFdip8UJNImUMyBhtr-Ek/view";
@@ -53,8 +53,8 @@ class _LibrosBiologiaState extends State<LibrosBiologia> {
   Widget build(BuildContext context) {
     return clasesdelibros(
         libros(
-          NetworkImage(
-              "https://res.cloudinary.com/lucianogutierrez/image/upload/v1635431026/BOOKS%20TEST/image_2_lvzy78.png"),
+          AssetImage(
+              "assets/bio.png"),
           () async {
             const url =
                 "https://drive.google.com/file/d/1Nay4nP1Cp-8VyHUzMOO3Hz13vI5X1TJ8/view?usp=sharing";
@@ -92,8 +92,8 @@ class _LibrosBioquimicaState extends State<LibrosBioquimica> {
   Widget build(BuildContext context) {
     return clasesdelibros(
         libros(
-          NetworkImage(
-              "https://res.cloudinary.com/lucianogutierrez/image/upload/v1635431239/BOOKS%20TEST/image_3_njwei1.png"),
+          AssetImage(
+              "assets/bioqui.png"),
           () async {
             const url =
                 "https://drive.google.com/file/d/1KF7NvsQAUK5eUJt18wk5tinyvB1Ot8cM/view";
