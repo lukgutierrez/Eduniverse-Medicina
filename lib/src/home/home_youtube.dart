@@ -12,6 +12,7 @@ class _HomeYoutubeState extends State<HomeYoutube> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+        automaticallyImplyLeading: false,
         centerTitle: false,
         leadingWidth: 25,
         title: Text("CANALES DE YOUTUBE",

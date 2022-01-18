@@ -4,7 +4,6 @@ import 'package:eduniverse_medicina/src/home/subhome/home_cienciasbooks.dart';
 import 'package:eduniverse_medicina/src/home/subhome/home_medicinabooks.dart';
 import 'package:flutter/material.dart';
 
-
 class HomeBooks extends StatefulWidget {
   @override
   _HomeBooksState createState() => _HomeBooksState();
@@ -70,6 +69,7 @@ class _LibrosState extends State<Libros> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+        automaticallyImplyLeading: false, //QuitaFlecha
         centerTitle: false,
         leadingWidth: 25,
         title:
