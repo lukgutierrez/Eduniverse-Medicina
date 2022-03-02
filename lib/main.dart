@@ -1,9 +1,14 @@
+import 'package:admob_flutter/admob_flutter.dart';
 import 'package:eduniverse_medicina/src/home/home_books.dart';
 import 'package:eduniverse_medicina/src/home/home_investigaciones.dart';
 import 'package:eduniverse_medicina/src/home/home_youtube.dart';
 import 'package:flutter/material.dart';
 
-void main() => runApp(MyApp());
+void main() {
+  WidgetsFlutterBinding.ensureInitialized();
+  Admob.initialize();
+  runApp(MyApp());
+}
 
 class MyApp extends StatelessWidget {
   @override

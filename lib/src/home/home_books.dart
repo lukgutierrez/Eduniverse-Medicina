@@ -1,3 +1,4 @@
+import 'package:admob_flutter/admob_flutter.dart';
 import 'package:eduniverse_medicina/src/class_funtions/function_tarjetas.dart';
 import 'package:eduniverse_medicina/src/home/home_youtube.dart';
 import 'package:eduniverse_medicina/src/home/subhome/home_cienciasbooks.dart';
@@ -10,6 +11,7 @@ class HomeBooks extends StatefulWidget {
 }
 
 class _HomeBooksState extends State<HomeBooks> {
+  @override
   int currentIndex = 0;
   @override
   Widget build(BuildContext context) {
@@ -58,13 +60,26 @@ Widget _patallaDistinta(int paginaActual) {
 }
 
 class Libros extends StatefulWidget {
-  Libros({Key? key}) : super(key: key);
-
   @override
   _LibrosState createState() => _LibrosState();
 }
 
 class _LibrosState extends State<Libros> {
+  late AdmobInterstitial interstitialAd;
+  @override
+  void initState() {
+    super.initState();
+    interstitialAd = AdmobInterstitial(
+        adUnitId: "ca-app-pub-3940256099942544/1033173712",
+        listener: (AdmobAdEvent event, Map<String, dynamic>? args) {
+          if (event == AdmobAdEvent.closed) {
+            interstitialAd.load();
+          }
+        });
+
+    interstitialAd.load();
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -87,11 +102,15 @@ class _LibrosState extends State<Libros> {
                 style: TextStyle(color: Colors.white),
               )),
             ),
-            () {
-              Navigator.push(
-                context,
-                MaterialPageRoute(builder: (context) => HomeCienciaBooks()),
-              );
+            () async {
+              if (await interstitialAd.isLoaded == null) {
+                interstitialAd.show();
+              } else {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => HomeCienciaBooks()),
+                );
+              }
             },
           ),
           tarjeta(
